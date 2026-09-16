@@ -96,8 +96,70 @@ def coder_life_state_machine():
                     print("Not a valid event for this state. Try again.")
 
 
+def mood_state_machine():
+    """
+    Extension Activity: a mood state machine with 4 states.
+    States: mad, sad, glad, bad
+    Each state has at least 2 valid events that transition elsewhere.
+    Invalid input does not change the state.
+
+    Transitions:
+        MAD  + calm_down -> GLAD
+        MAD  + vent      -> SAD
+        SAD  + cheer_up  -> GLAD
+        SAD  + dwell     -> BAD
+        GLAD + relax     -> GLAD
+        GLAD + annoyed   -> MAD
+        BAD  + rest      -> SAD
+        BAD  + snap      -> MAD
+    """
+    state = "glad"
+
+    while True:
+        if state == "mad":
+            print("You are MAD! Something ticked you off.")
+            event = input("What do you do? (calm_down / vent) ").strip().lower()
+            if event == "calm_down":
+                state = "glad"
+            elif event == "vent":
+                state = "sad"
+            else:
+                print("Invalid event, try again.")
+
+        elif state == "sad":
+            print("You are SAD. Feeling down.")
+            event = input("What do you do? (cheer_up / dwell) ").strip().lower()
+            if event == "cheer_up":
+                state = "glad"
+            elif event == "dwell":
+                state = "bad"
+            else:
+                print("Invalid event, try again.")
+
+        elif state == "glad":
+            print("You are GLAD! Life is good.")
+            event = input("What do you do? (relax / annoyed) ").strip().lower()
+            if event == "relax":
+                state = "glad"
+            elif event == "annoyed":
+                state = "mad"
+            else:
+                print("Invalid event, try again.")
+
+        elif state == "bad":
+            print("You are having a BAD time. Everything feels off.")
+            event = input("What do you do? (rest / snap) ").strip().lower()
+            if event == "rest":
+                state = "sad"
+            elif event == "snap":
+                state = "mad"
+            else:
+                print("Invalid event, try again.")
+
+
 if __name__ == "__main__":
     # Uncomment ONE of these at a time to run that state machine.
 
     # traffic_light_state_machine()
-    coder_life_state_machine()
+    # coder_life_state_machine()
+    mood_state_machine()
