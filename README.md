@@ -65,7 +65,7 @@ Notice that transitions only occur along the arrows shown in the diagram. This m
 
 Whenever you are creating a new Python project, it is best to stay organized by placing all the files related to the project in the same folder. If you are in the GitHub classroom, you will already have a folder created. If not, create a folder for Activity 6.
 
-Inside the folder, create a new `main.py` file.
+Inside the folder, create a new `extension.py` file.
 
 ## 2. States, Events, and Transitions in a Program
 
